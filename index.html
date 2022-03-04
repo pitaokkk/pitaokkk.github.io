@@ -1,22 +1,83 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>calendar</title>
-  </head>
-  
-  <body>
-    <header>
-      <h1>calendar</h1>
-    </haeder>
-    <nav>
-    <form>
-      <input type="search" name="q" placeholder="要搜索的内容">
-      <input type="submit" value="搜索">
-    </form>
-    </nav>
-    <footer>
-      <p>© pitao保留所有权利</p>
-    </footer>
-  </body>
-</html>   
+
+<head>
+  <meta charset="utf-8">
+  <title>Search...</title>
+</head>
+
+<body>
+  <div id="all-document">
+    <h1>Search...</h1>
+    <div id="search-bar">
+      <input placeholder="要搜索的内容" id="source"><button id="submit" onclick="jump()">搜索</button>
+    </div>
+    <p>© <a href="https://github.com/HanaYabuki">HY</a> 保留所有权利</p>
+  </div>
+</body>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #111;
+}
+#all-document {
+  transform: translate(-50%, -50%);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  width: 40%;
+}
+h1 {
+  padding-top: 240px;
+  padding-bottom: 40px;
+  color: #eee;
+}
+#search-bar {
+  width: 100%;
+  overflow: hidden;
+}
+#source {
+  float: left;
+  color: #000;
+  height: 40px;
+  padding: 10px 40px;
+  border: 0;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  width: 80%;
+  background-color: #aaa;
+}
+#submit {
+  float: left;
+  height: 40px;
+  padding: 10px;
+  border: 0;
+  border-radius: 0 20px 20px 0;
+  width: 20%;
+  background-color: #ccc;
+}
+p {
+  padding-top: 300px;
+  color: #ddd;
+}
+
+</style>
+
+<script>
+function jump() {
+  var source = document.getElementById('source');
+  console.log(source.value);
+  window.location.assign('https://www.baidu.com/s?ie=UTF-8&wd=' + source.value);
+}
+
+</script>
+
+</html>
